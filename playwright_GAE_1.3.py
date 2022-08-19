@@ -10,32 +10,35 @@ import pyautogui as pagui
 import pyperclip
 from datetime import datetime
 
-import senhas
-
 # import pyperclip
 # import platform
-#
-
-inicio = datetime.today().strftime('%d/%m/%Y %H:%M:%S:%f')
-print(f"INICIO:  {inicio}")
-
-df = pd.read_excel(r"C:\git\playwright1\dadosValeSocial.xlsx", engine='openpyxl')
+import senhas
 
 ################################################ DEFINIÇÕES ################################################
 
 # nome  = "bruno.soares"
-nome = senhas.loginAline
-senha = senhas.senhaAline
-abaPlanilha = senhas.planilhaAline
+nome = senhas.loginMonica
+senha = senhas.senhaMonica
 strMail = "@extreme.digital"
 
-tarefa = "https://gae.extremedigital.com.br/portal/"
-linkLancamentos = "https://gae.extremedigital.com.br/gae-web/pages/apropriacao-esforco"
+linkPortalGAE = "https://gae.extremedigital.com.br/portal/"
+linkLancamentoPonto = "https://gae.extremedigital.com.br/gae-web/pages/apropriacao-esforco"
+linkPaginaMS = "https://login.microsoftonline.com/"
 
 f = '%d/%m/%Y %H:%M:%S:%f'
 
 MODO_DEBUG = True
 ############################################################################################################
+
+
+inicio = datetime.today().strftime('%d/%m/%Y %H:%M:%S:%f')
+print(f"INICIO:  {inicio}")
+
+df = pd.read_excel(r"./Lançamento_Horas_Equipe - Junho22.xlsx",
+                   engine='openpyxl',
+                   date_parser='Data',
+                   sheet_name='Monica'
+                   )
 
 def type(text):
     pyperclip.copy(text)
@@ -138,5 +141,5 @@ linkLogin = "https://login.microsoftonline.com/"
 
 page, browser = abrePagina(linkLogin)
 fazLogin(page, nome, strMail, senha)
-lancaDados(page, linkLancamentos)
-finalizaTudo(browser)
+#lancaDados(page, linkLancamentos)
+#finalizaTudo(browser)

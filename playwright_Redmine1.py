@@ -32,7 +32,12 @@ df = pd.read_excel(r"C:\git\playwright1\dadosValeSocial.xlsx", engine='openpyxl'
 
 nome = "Deborah.mesquita"
 # "Bruno.soares"
+
+# OS 014
 tarefa = "https://redmine.extremedigital.com.br/issues/55508/time_entries/new"
+
+# OS 029:
+tarefa = "https://redmine.extremedigital.com.br/issues/65961/time_entries/new"
 
 MODO_DEBUG = False
 ############################################################################################################
